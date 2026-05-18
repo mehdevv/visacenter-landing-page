@@ -14,8 +14,9 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+    "resolveJsonModule": true,
     "paths": {
-      "@/*": ["../src/*", "./src/*"]
+      "@/*": ["./src/*"]
     },
 
     /* Linting */
@@ -24,5 +25,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "visa_centre_content.json"]
 }
