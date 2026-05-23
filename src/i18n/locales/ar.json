@@ -1,0 +1,364 @@
+{
+  "brand": {
+    "name": "فيزا سنتر الجزائر",
+    "tagline": "ممثلون رسميون",
+    "location": "حيدرة، الجزائر",
+    "since": 2017,
+    "guarantee": "راضٍ أو مسترد",
+    "whatsapp": "+213XXXXXXXXX",
+    "consultationLink": "#book",
+    "cta_consultation": "احجز مكالمة استشارة"
+  },
+  "hero": {
+    "headline": "+200 طالب تمت مرافقتهم",
+    "headlineHighlight": "+200 طالب",
+    "subheadline": "نرافقك من التقديم حتى الوصول — القبول، المنح الدراسية، ومسار واضح نحو جامعتك في الصين.",
+    "video": {
+      "label": "تعريف بالمؤسس",
+      "duration": "45 sec",
+      "placeholder": "المؤسس يتحدث مباشرة إلى الكاميرا — تعريف بالوكالة، تحديات الطلاب، وفرصة الصين"
+    },
+    "trust_badges": [
+      "منذ 2017 · حيدرة، الجزائر",
+      "ممثلون رسميون",
+      "راضٍ أو مسترد"
+    ],
+    "stats": [
+      {
+        "value": "100+",
+        "label": "طلاب تم إلحاقهم"
+      },
+      {
+        "value": "2017",
+        "label": "منذ"
+      },
+      {
+        "value": "3",
+        "label": "مكاتب عالمية"
+      },
+      {
+        "value": "أ إلى ي",
+        "label": "متابعة شاملة"
+      },
+      {
+        "value": "0",
+        "label": "طلاب تُركوا دون دعم"
+      }
+    ]
+  },
+  "problems": {
+    "section_title": "Why Most Algerian Students Fail to Study Abroad",
+    "items": [
+      {
+        "icon": "shield-x",
+        "title": "Scams & Fake Agents",
+        "description": "Paying thousands to 'agencies' that disappear after taking your money."
+      },
+      {
+        "icon": "file-x",
+        "title": "Visa Refusals",
+        "description": "One small paperwork mistake leads to instant embassy rejection."
+      },
+      {
+        "icon": "map-x",
+        "title": "No Clue About China",
+        "description": "Arriving in a massive country with zero support, housing, or guidance."
+      },
+      {
+        "icon": "money-x",
+        "title": "Too Expensive",
+        "description": "Paying full tuition because you didn't know how to secure scholarships."
+      },
+      {
+        "icon": "graduation-x",
+        "title": "Wrong Speciality Choice",
+        "description": "Getting placed in low-tier universities for degrees that won't get you a job."
+      },
+      {
+        "icon": "compass-x",
+        "title": "No Strategic Guidance",
+        "description": "Applying blindly without a roadmap tailored to your specific profile."
+      }
+    ]
+  },
+  "authority": {
+    "section_title": "We Don't Just Apply — We Strategize.",
+    "description": "Since 2017, VISA Centre Algeria has been the premier advisory for serious students. We are not document pushers; we are academic strategists.",
+    "video": {
+      "label": "Founder Story",
+      "duration": "2 min",
+      "placeholder": "Founder shares personal story, experience since 2017, number of students helped, and why the system works"
+    },
+    "bullets": [
+      "We analyze your profile, not just your documents",
+      "We optimize your scholarship chances from day one",
+      "We manage the entire process A to Z",
+      "We prepare students for Chinese academic life before departure",
+      "We don't chase clients — we guide committed students"
+    ]
+  },
+  "advantages": {
+    "section_title": "The VISA Centre Advantage",
+    "items": [
+      {
+        "title": "Better Universities",
+        "description": "Partnerships with top-tier Chinese institutions.",
+        "accent": "blue"
+      },
+      {
+        "title": "Scholarship Maximization",
+        "description": "Access to hidden funding opportunities.",
+        "accent": "gold"
+      },
+      {
+        "title": "Stronger Visa Approval",
+        "description": "Meticulous file preparation and interview prep.",
+        "accent": "red"
+      },
+      {
+        "title": "Safer Relocation",
+        "description": "We ensure safe dormitories and secure arrivals.",
+        "accent": "blue"
+      },
+      {
+        "title": "Long-term Success",
+        "description": "Ongoing academic monitoring and support.",
+        "accent": "gold"
+      },
+      {
+        "title": "Satisfait ou Remboursé",
+        "description": "Our ironclad guarantee on your admission.",
+        "accent": "red"
+      }
+    ]
+  },
+  "process": {
+    "section_title": "النظام الكامل الذي يوصلك إلى الصين",
+    "video": {
+      "label": "شرح النظام",
+      "duration": "3 min",
+      "placeholder": "عرض متحرك للمراحل الأربع — الجداول الزمنية ومسار الطالب"
+    },
+    "phases": [
+      {
+        "number": "01",
+        "title": "المنح ومطابقة الجامعة",
+        "steps": [
+          "تحليل الملف",
+          "قائمة الجامعات",
+          "تحديد المنح"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "إعداد الوثائق",
+        "steps": [
+          "قائمة المستندات",
+          "الترجمة والتصديق",
+          "تقديم الطلبات"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "تحسين التأشيرة",
+        "steps": [
+          "التحضير للسفارة",
+          "مراجعة ملف التأشيرة",
+          "تدريب المقابلة"
+        ]
+      },
+      {
+        "number": "04",
+        "title": "الوصول والاستقرار",
+        "steps": [
+          "استقبال المطار",
+          "السكن",
+          "دعم مستمر"
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "section_title": "طلاب حقيقيون. قصص حقيقية.",
+    "items": [
+      {
+        "name": "Yassine B.",
+        "role": "طالب طب",
+        "university": "Beijing University",
+        "quote": "رُفض طلبي مرتين قبل فيزا سنتر. أعادوا بناء ملفي وحصلت على تأشيرتي خلال 3 أسابيع.",
+        "stars": 5,
+        "video": {
+          "label": "قصة طالب",
+          "placeholder": "ياسين يشارك رحلة الرفض إلى القبول"
+        }
+      },
+      {
+        "name": "Amira K.",
+        "role": "هندسة",
+        "university": "Shanghai Jiao Tong",
+        "quote": "وجدوا لي منحة كاملة لم أكن أعرف بها. تم التعامل مع كل شيء باحتراف من اليوم الأول.",
+        "stars": 5,
+        "video": {
+          "label": "قصة طالب",
+          "placeholder": "أميرة تشرح اكتشاف المنحة"
+        }
+      },
+      {
+        "name": "Fatima H.",
+        "role": "أم",
+        "university": "وليّة أمر، ابنتها في تشنغدو",
+        "quote": "كنتُ خائفة كأم. أبقانا فيزا سنتر على اطلاع في كل خطوة. وصلت ابنتي بسلام وهي تتقدّم بشكل ممتاز.",
+        "stars": 5,
+        "video": {
+          "label": "قصة طالب",
+          "placeholder": "فاطمة تتحدث عن طمأنة الأهل"
+        }
+      },
+      {
+        "name": "Rami D.",
+        "role": "تجارة",
+        "university": "Wuhan University",
+        "quote": "استقبلوني في المطار، ساعدوني على الاستقرار، وما زال دعمهم معي حتى اليوم.",
+        "stars": 5,
+        "video": {
+          "label": "قصة طالب",
+          "placeholder": "رامي يتحدث عن الدعم عند الوصول"
+        }
+      },
+      {
+        "name": "Sofiane M.",
+        "role": "علوم الحاسوب",
+        "university": "Zhejiang University",
+        "quote": "قبل 6 أشهر لم أكن أعرف من أين أبدأ. اليوم لدي خطاب القبول والتأشيرة وتذكرة الطيران.",
+        "stars": 5,
+        "video": {
+          "label": "قصة طالب",
+          "placeholder": "سفيان يصف رحلة التحول الكاملة"
+        }
+      }
+    ]
+  },
+  "gallery": {
+    "section_title": "الحياة الجامعية والطلابية",
+    "images": [
+      {
+        "src": "/hero.png",
+        "alt": "طلاب مدعومون من فيزا سنتر الجزائر"
+      },
+      {
+        "src": "/hero.png",
+        "alt": "رحلة الدراسة في الصين"
+      },
+      {
+        "src": "/hero.png",
+        "alt": "الحياة الجامعية في الصين"
+      },
+      {
+        "src": "/hero.png",
+        "alt": "نجاح الطلاب في الخارج"
+      },
+      {
+        "src": "/hero.png",
+        "alt": "الوصول وتجربة الحرم الجامعي"
+      }
+    ]
+  },
+  "parent_trust": {
+    "section_title": "Your Child Is Safe.",
+    "section_highlight": "We Promise.",
+    "description": "Sending your child to China is a massive family decision. We treat every student as if they were our own family member.",
+    "video": {
+      "label": "Parent Reassurance",
+      "duration": "2 min",
+      "placeholder": "Founder addresses parents directly — safety, accommodation, monitoring, communication, costs"
+    },
+    "features": [
+      "Safe verified dormitories",
+      "24/7 communication",
+      "Secure campuses",
+      "Airport reception included",
+      "Health insurance guidance",
+      "Academic monitoring"
+    ]
+  },
+  "faq": {
+    "section_title": "كل ما تتردد في سؤاله",
+    "items": [
+      {
+        "question": "هل يمكنني الدراسة في الصين دون التحدث بالصينية؟",
+        "answer": "نعم. معظم البرامج للطلاب الدوليين باللغة الإنجليزية. نساعدك أيضاً في إيجاد البرامج المناسبة لأهدافك.",
+        "video": {
+          "label": "أسئلة الحياة في الصين",
+          "duration": "45 ث"
+        }
+      },
+      {
+        "question": "ما الميزانية التي أحتاجها؟",
+        "answer": "مع تحسين المنح، يقلّل كثير من الطلاب التكاليف بشكل كبير. نوضح الميزانية الكاملة قبل الالتزام.",
+        "video": {
+          "label": "أسئلة الميزانية",
+          "duration": "45 ث"
+        }
+      },
+      {
+        "question": "ما فرصي في الحصول على منحة؟",
+        "answer": "نحلل ملفك ونطابقك مع المنح التي تستحقها فعلاً — بما فيها CSC والمنح الجامعية والبرامج الثنائية الجزائر-الصين.",
+        "video": {
+          "label": "أسئلة المنح",
+          "duration": "60 ث"
+        }
+      },
+      {
+        "question": "ماذا لو رُفضت تأشيرتي؟",
+        "answer": "نجهّز ملفك لتقليل مخاطر الرفض. معدل قبولنا مرتفع لأننا لا نقدّم حتى يصبح الملف محسّناً.",
+        "video": {
+          "label": "أسئلة التأشيرة",
+          "duration": "30 ث"
+        }
+      },
+      {
+        "question": "هل الشهادات الصينية معترف بها في الجزائر؟",
+        "answer": "نعم. شهادات الجامعات الصينية المعتمدة معترف بها في الجزائر ودولياً، خاصة في الطب والهندسة والتجارة.",
+        "video": null
+      },
+      {
+        "question": "هل يمكنني العمل أثناء الدراسة في الصين؟",
+        "answer": "للطلاب الدوليين خيارات عمل محدودة. ننصحك بما هو مسموح وكيفية التخطيط المالي.",
+        "video": null
+      }
+    ]
+  },
+  "urgency": {
+    "section_title": "September 2025 Intake Deadline Is Approaching",
+    "description": "Scholarship seats are strictly limited and embassy appointments become scarce. Don't wait until it's too late.",
+    "deadline_date": "2025-07-15T00:00:00",
+    "cta": "Secure My Spot Before Deadline",
+    "video": {
+      "label": "Urgent Deadline Warning",
+      "duration": "30 sec",
+      "placeholder": "Direct urgent message from founder — why acting now matters, limited seats, embassy timing"
+    }
+  },
+  "university_partners": {
+    "label": "جامعات شريكة موثوقة",
+    "universities": [
+      "Beijing University",
+      "Shanghai Jiao Tong",
+      "Zhejiang University",
+      "Wuhan University",
+      "Fudan University"
+    ],
+    "extra_count": 20
+  },
+  "final_cta": {
+    "section_title": "احجز استشارتك المجانية اليوم",
+    "description": "بدون التزام. بدون ضغط. إجابات واضحة عن مستقبلك فقط.",
+    "footer_note": "ممثلون رسميون منذ 2017 · حيدرة، الجزائر"
+  },
+  "ui": {
+    "watch": "شاهد",
+    "more_universities": "+{count} أخرى",
+    "four_phase_alt": "نظام من أربع مراحل: المنح ومطابقة الجامعة، إعداد الوثائق، تحسين التأشيرة، الوصول والاستقرار",
+    "flags_alt": "الجزائر، الصين، باكستان، والمملكة المتحدة"
+  }
+}

@@ -204,6 +204,7 @@
   .uni-logo-marquee-track {
     display: flex;
     width: max-content;
+    align-items: center;
     animation: uni-logo-marquee 26s linear infinite;
   }
 
@@ -219,4 +220,12 @@
       animation: none;
     }
   }
+}
+
+body.locale-ar {
+  font-family: "Noto Sans Arabic", "Roboto Slab", ui-serif, serif;
+}
+
+[dir="rtl"] .uni-logo-marquee-track {
+  animation-direction: reverse;
 }

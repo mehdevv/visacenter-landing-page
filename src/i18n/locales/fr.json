@@ -1,0 +1,364 @@
+{
+  "brand": {
+    "name": "VISA Centre Algérie",
+    "tagline": "Représentants officiels",
+    "location": "Hydra, Alger",
+    "since": 2017,
+    "guarantee": "Satisfait ou Remboursé",
+    "whatsapp": "+213XXXXXXXXX",
+    "consultationLink": "#book",
+    "cta_consultation": "Réserver un appel de consultation"
+  },
+  "hero": {
+    "headline": "+200 étudiants accompagnés",
+    "headlineHighlight": "+200 étudiants accompagnés",
+    "subheadline": "Nous vous guidons de la candidature à l'arrivée — admission, bourses et un parcours clair vers votre université en Chine.",
+    "video": {
+      "label": "Présentation du fondateur",
+      "duration": "45 sec",
+      "placeholder": "Le fondateur s'adresse directement à la caméra — présentation de l'agence, difficultés des étudiants et opportunité en Chine"
+    },
+    "trust_badges": [
+      "Depuis 2017 · Hydra, Alger",
+      "Représentants officiels",
+      "Satisfait ou Remboursé"
+    ],
+    "stats": [
+      {
+        "value": "100+",
+        "label": "Étudiants placés"
+      },
+      {
+        "value": "2017",
+        "label": "Depuis"
+      },
+      {
+        "value": "3",
+        "label": "Bureaux dans le monde"
+      },
+      {
+        "value": "A à Z",
+        "label": "Accompagnement complet"
+      },
+      {
+        "value": "0",
+        "label": "Étudiants abandonnés"
+      }
+    ]
+  },
+  "problems": {
+    "section_title": "Why Most Algerian Students Fail to Study Abroad",
+    "items": [
+      {
+        "icon": "shield-x",
+        "title": "Scams & Fake Agents",
+        "description": "Paying thousands to 'agencies' that disappear after taking your money."
+      },
+      {
+        "icon": "file-x",
+        "title": "Visa Refusals",
+        "description": "One small paperwork mistake leads to instant embassy rejection."
+      },
+      {
+        "icon": "map-x",
+        "title": "No Clue About China",
+        "description": "Arriving in a massive country with zero support, housing, or guidance."
+      },
+      {
+        "icon": "money-x",
+        "title": "Too Expensive",
+        "description": "Paying full tuition because you didn't know how to secure scholarships."
+      },
+      {
+        "icon": "graduation-x",
+        "title": "Wrong Speciality Choice",
+        "description": "Getting placed in low-tier universities for degrees that won't get you a job."
+      },
+      {
+        "icon": "compass-x",
+        "title": "No Strategic Guidance",
+        "description": "Applying blindly without a roadmap tailored to your specific profile."
+      }
+    ]
+  },
+  "authority": {
+    "section_title": "We Don't Just Apply — We Strategize.",
+    "description": "Since 2017, VISA Centre Algeria has been the premier advisory for serious students. We are not document pushers; we are academic strategists.",
+    "video": {
+      "label": "Founder Story",
+      "duration": "2 min",
+      "placeholder": "Founder shares personal story, experience since 2017, number of students helped, and why the system works"
+    },
+    "bullets": [
+      "We analyze your profile, not just your documents",
+      "We optimize your scholarship chances from day one",
+      "We manage the entire process A to Z",
+      "We prepare students for Chinese academic life before departure",
+      "We don't chase clients — we guide committed students"
+    ]
+  },
+  "advantages": {
+    "section_title": "The VISA Centre Advantage",
+    "items": [
+      {
+        "title": "Better Universities",
+        "description": "Partnerships with top-tier Chinese institutions.",
+        "accent": "blue"
+      },
+      {
+        "title": "Scholarship Maximization",
+        "description": "Access to hidden funding opportunities.",
+        "accent": "gold"
+      },
+      {
+        "title": "Stronger Visa Approval",
+        "description": "Meticulous file preparation and interview prep.",
+        "accent": "red"
+      },
+      {
+        "title": "Safer Relocation",
+        "description": "We ensure safe dormitories and secure arrivals.",
+        "accent": "blue"
+      },
+      {
+        "title": "Long-term Success",
+        "description": "Ongoing academic monitoring and support.",
+        "accent": "gold"
+      },
+      {
+        "title": "Satisfait ou Remboursé",
+        "description": "Our ironclad guarantee on your admission.",
+        "accent": "red"
+      }
+    ]
+  },
+  "process": {
+    "section_title": "Le système complet qui vous mène en Chine",
+    "video": {
+      "label": "Explication du système",
+      "duration": "3 min",
+      "placeholder": "Présentation animée des 4 phases — calendriers, tableaux de bord, parcours étudiant"
+    },
+    "phases": [
+      {
+        "number": "01",
+        "title": "Bourses et choix d'université",
+        "steps": [
+          "Analyse du profil",
+          "Liste d'universités",
+          "Identification des bourses"
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Préparation des dossiers",
+        "steps": [
+          "Liste des documents",
+          "Traduction et légalisation",
+          "Soumission des candidatures"
+        ]
+      },
+      {
+        "number": "03",
+        "title": "Optimisation du visa",
+        "steps": [
+          "Préparation ambassade",
+          "Relecture du dossier visa",
+          "Coaching entretien"
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Arrivée et installation",
+        "steps": [
+          "Accueil à l'aéroport",
+          "Logement",
+          "Suivi continu"
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "section_title": "De vrais étudiants. De vraies histoires.",
+    "items": [
+      {
+        "name": "Yassine B.",
+        "role": "Étudiant en médecine",
+        "university": "Beijing University",
+        "quote": "J'ai été refusé deux fois avant VISA Centre. Ils ont reconstruit mon dossier et j'ai obtenu mon visa en 3 semaines.",
+        "stars": 5,
+        "video": {
+          "label": "Témoignage étudiant",
+          "placeholder": "Yassine raconte son parcours du refus à l'approbation"
+        }
+      },
+      {
+        "name": "Amira K.",
+        "role": "Ingénierie",
+        "university": "Shanghai Jiao Tong",
+        "quote": "Ils m'ont trouvé une bourse complète dont j'ignorais l'existence. Tout a été géré professionnellement dès le premier jour.",
+        "stars": 5,
+        "video": {
+          "label": "Témoignage étudiant",
+          "placeholder": "Amira explique la découverte de la bourse"
+        }
+      },
+      {
+        "name": "Fatima H.",
+        "role": "Mère de famille",
+        "university": "Parente, fille à Chengdu",
+        "quote": "En tant que parent j'étais terrifiée. VISA Centre nous a tenus informés à chaque étape. Ma fille est arrivée en sécurité et s'épanouit.",
+        "stars": 5,
+        "video": {
+          "label": "Témoignage étudiant",
+          "placeholder": "Fatima parle de la réassurance pour les parents"
+        }
+      },
+      {
+        "name": "Rami D.",
+        "role": "Commerce",
+        "university": "Wuhan University",
+        "quote": "Ils m'ont accueilli à l'aéroport, m'ont aidé à m'installer, et je bénéficie encore de leur soutien aujourd'hui.",
+        "stars": 5,
+        "video": {
+          "label": "Témoignage étudiant",
+          "placeholder": "Rami parle de l'accueil et du suivi"
+        }
+      },
+      {
+        "name": "Sofiane M.",
+        "role": "Informatique",
+        "university": "Zhejiang University",
+        "quote": "Il y a 6 mois je ne savais pas par où commencer. Aujourd'hui j'ai ma lettre d'admission, mon visa et mon billet d'avion.",
+        "stars": 5,
+        "video": {
+          "label": "Témoignage étudiant",
+          "placeholder": "Sofiane décrit sa transformation complète"
+        }
+      }
+    ]
+  },
+  "gallery": {
+    "section_title": "Vie sur le campus et étudiante",
+    "images": [
+      {
+        "src": "/hero.png",
+        "alt": "Étudiants accompagnés par VISA Centre Algérie"
+      },
+      {
+        "src": "/hero.png",
+        "alt": "Parcours d'études en Chine"
+      },
+      {
+        "src": "/hero.png",
+        "alt": "Vie universitaire en Chine"
+      },
+      {
+        "src": "/hero.png",
+        "alt": "Réussite étudiante à l'étranger"
+      },
+      {
+        "src": "/hero.png",
+        "alt": "Arrivée et expérience sur le campus"
+      }
+    ]
+  },
+  "parent_trust": {
+    "section_title": "Your Child Is Safe.",
+    "section_highlight": "We Promise.",
+    "description": "Sending your child to China is a massive family decision. We treat every student as if they were our own family member.",
+    "video": {
+      "label": "Parent Reassurance",
+      "duration": "2 min",
+      "placeholder": "Founder addresses parents directly — safety, accommodation, monitoring, communication, costs"
+    },
+    "features": [
+      "Safe verified dormitories",
+      "24/7 communication",
+      "Secure campuses",
+      "Airport reception included",
+      "Health insurance guidance",
+      "Academic monitoring"
+    ]
+  },
+  "faq": {
+    "section_title": "Tout ce que vous hésitez à demander",
+    "items": [
+      {
+        "question": "Puis-je étudier en Chine sans parler chinois ?",
+        "answer": "Oui. La plupart des programmes pour étudiants internationaux sont en anglais. Nous vous aidons aussi à trouver les programmes en anglais adaptés à vos objectifs.",
+        "video": {
+          "label": "FAQ vie en Chine",
+          "duration": "45s"
+        }
+      },
+      {
+        "question": "Quel budget faut-il prévoir ?",
+        "answer": "Avec notre optimisation des bourses, beaucoup d'étudiants réduisent fortement les coûts. Nous détaillons le budget complet — frais de scolarité et vie quotidienne — avant votre engagement.",
+        "video": {
+          "label": "FAQ budget",
+          "duration": "45s"
+        }
+      },
+      {
+        "question": "Quelles sont mes chances de bourse ?",
+        "answer": "Nous analysons votre profil et vous orientons vers les bourses réellement accessibles — CSC, bourses universitaires et programmes bilatéraux Algérie-Chine.",
+        "video": {
+          "label": "FAQ bourses",
+          "duration": "60s"
+        }
+      },
+      {
+        "question": "Et si mon visa est refusé ?",
+        "answer": "Nous préparons votre dossier pour limiter les refus. Notre taux d'approbation est élevé car nous ne soumettons pas tant que le dossier n'est pas optimisé.",
+        "video": {
+          "label": "FAQ visa",
+          "duration": "30s"
+        }
+      },
+      {
+        "question": "Les diplômes chinois sont-ils reconnus en Algérie ?",
+        "answer": "Oui. Les diplômes des universités chinoises accréditées sont reconnus en Algérie et à l'international, surtout en médecine, ingénierie et commerce.",
+        "video": null
+      },
+      {
+        "question": "Puis-je travailler pendant mes études en Chine ?",
+        "answer": "Les étudiants internationaux ont des possibilités de travail limitées. Nous vous conseillons sur ce qui est autorisé et comment planifier vos finances.",
+        "video": null
+      }
+    ]
+  },
+  "urgency": {
+    "section_title": "September 2025 Intake Deadline Is Approaching",
+    "description": "Scholarship seats are strictly limited and embassy appointments become scarce. Don't wait until it's too late.",
+    "deadline_date": "2025-07-15T00:00:00",
+    "cta": "Secure My Spot Before Deadline",
+    "video": {
+      "label": "Urgent Deadline Warning",
+      "duration": "30 sec",
+      "placeholder": "Direct urgent message from founder — why acting now matters, limited seats, embassy timing"
+    }
+  },
+  "university_partners": {
+    "label": "Universités partenaires de confiance",
+    "universities": [
+      "Beijing University",
+      "Shanghai Jiao Tong",
+      "Zhejiang University",
+      "Wuhan University",
+      "Fudan University"
+    ],
+    "extra_count": 20
+  },
+  "final_cta": {
+    "section_title": "Réservez votre consultation gratuite aujourd'hui",
+    "description": "Sans engagement. Sans pression. Juste des réponses claires sur votre avenir.",
+    "footer_note": "Représentants officiels depuis 2017 · Hydra, Alger"
+  },
+  "ui": {
+    "watch": "Regarder",
+    "more_universities": "+{count} de plus",
+    "four_phase_alt": "Système en quatre phases : bourses et universités, préparation des dossiers, optimisation du visa, arrivée et installation",
+    "flags_alt": "Algérie, Chine, Pakistan et Royaume-Uni"
+  }
+}
