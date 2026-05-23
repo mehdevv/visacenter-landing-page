@@ -6,15 +6,14 @@
     "since": 2017,
     "guarantee": "Satisfait ou Remboursé",
     "whatsapp": "+213XXXXXXXXX",
-    "consultationLink": "#book"
+    "consultationLink": "#book",
+    "cta_consultation": "Book a Consultation Call"
   },
 
   "hero": {
-    "headline": "Stop Losing Your Future to Visa Rejections, Scams, and Wrong Choices.",
-    "headlineHighlight": "Visa Rejections",
-    "subheadline": "Don't leave your education to chance. We provide a complete, A-to-Z system to secure your admission, maximize scholarship opportunities, and guarantee your arrival in China.",
-    "cta_primary": "Check My Eligibility — Free",
-    "cta_secondary": "See How It Works",
+    "headline": "+200 students served",
+    "headlineHighlight": "+200 students served",
+    "subheadline": "We guide you from application to arrival—admission, scholarships, and a clear path to your university in China.",
     "video": {
       "label": "Founder Introduction",
       "duration": "45 sec",
@@ -216,6 +215,17 @@
     ]
   },
 
+  "gallery": {
+    "section_title": "Campus & Student Life",
+    "images": [
+      { "src": "/hero.png", "alt": "Students supported by VISA Centre Algeria" },
+      { "src": "/hero.png", "alt": "Study abroad journey to China" },
+      { "src": "/hero.png", "alt": "University life in China" },
+      { "src": "/hero.png", "alt": "Student success abroad" },
+      { "src": "/hero.png", "alt": "Arrival and campus experience" }
+    ]
+  },
+
   "parent_trust": {
     "section_title": "Your Child Is Safe.",
     "section_highlight": "We Promise.",
@@ -298,8 +308,6 @@
   "final_cta": {
     "section_title": "Book Your Free Consultation Today",
     "description": "No obligation. No pressure. Just clear answers about your future.",
-    "cta_whatsapp": "WhatsApp Us Now",
-    "cta_call": "Book a Consultation Call",
     "footer_note": "Official representatives since 2017 · Hydra, Algiers"
   }
 }
