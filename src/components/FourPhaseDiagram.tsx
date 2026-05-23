@@ -1,11 +1,14 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { fourPhaseByLocale } from "@/assets/four-phase";
 import { useContent, useLanguage } from "@/i18n/LanguageContext";
+import { useLocaleMotion } from "@/lib/useLocaleMotion";
 import { scaleIn, viewportOnce } from "@/lib/motion";
 
 export function FourPhaseDiagram() {
   const c = useContent();
   const { locale } = useLanguage();
+  const { localeSwap } = useLocaleMotion();
+  const reducedMotion = useReducedMotion();
   const src = fourPhaseByLocale[locale];
 
   return (
@@ -26,10 +29,10 @@ export function FourPhaseDiagram() {
           decoding="async"
           draggable={false}
           onDragStart={(e) => e.preventDefault()}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          initial={reducedMotion ? { opacity: 1 } : localeSwap.initial}
+          animate={localeSwap.animate}
+          exit={reducedMotion ? undefined : localeSwap.exit}
+          transition={localeSwap.transition}
         />
       </AnimatePresence>
     </motion.div>

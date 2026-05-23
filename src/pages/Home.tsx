@@ -12,14 +12,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AutoScrollCarousel, CarouselSlide } from "@/components/AutoScrollCarousel";
 import { FourPhaseDiagram } from "@/components/FourPhaseDiagram";
 import { HeroFlyingSchools, HeroFlyingSchoolsStrip } from "@/components/HeroFlyingSchools";
-import { useContent } from "@/i18n/LanguageContext";
+import { useContent, useLanguage } from "@/i18n/LanguageContext";
 import {
   fadeUp,
   springSnappy,
   staggerContainer,
-  staggerItem,
   viewportOnce,
 } from "@/lib/motion";
+import { useLocaleMotion } from "@/lib/useLocaleMotion";
+import { galleryPhotos } from "@/assets/gallery";
 function videoCaption(label: string, duration?: string) {
   return duration ? `${label} · ${duration}` : label;
 }
@@ -184,7 +185,11 @@ function UniversityPartnerLogos() {
 
   return (
     <div className="w-full">
-      <div className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden md:hidden">
+      {/* LTR track so the CSS marquee loops correctly on Arabic (RTL) pages */}
+      <div
+        className="carousel-full-bleed relative overflow-hidden md:hidden"
+        dir="ltr"
+      >
         <div className="uni-logo-marquee-track gap-6">
           <LogoStrip stripKey="m1" />
           <LogoStrip stripKey="m2" />
@@ -200,14 +205,16 @@ function UniversityPartnerLogos() {
 
 export default function Home() {
   const c = useContent();
+  const { locale } = useLanguage();
+  const { staggerItem, localeSwap } = useLocaleMotion();
   const reducedMotion = useReducedMotion();
   const faqVideoPills = c.faq.items.filter((item) => item.video != null);
 
   return (
-    <div className="min-h-[100dvh] min-h-screen overflow-x-hidden bg-[#0E2340] text-white antialiased selection:bg-[#C8A84B] selection:text-[#0E2340]">
+    <div className="min-h-[100dvh] min-h-screen overflow-x-hidden bg-[#0E2340] text-white antialiased selection:bg-[#C8A84B] selection:text-[#0E2340] pb-sticky-cta">
       
       {/* 1. HERO SECTION */}
-      <section className="relative pt-2 pb-8 sm:pt-3 sm:pb-12 md:pb-16 px-3 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-14 pb-10 sm:pt-3 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <HeroFlyingSchools />
         <motion.div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[min(500px,120vw)] sm:h-[500px] bg-[#2B7EC1]/20 blur-[120px] rounded-full pointer-events-none z-0"
@@ -216,25 +223,46 @@ export default function Home() {
         />
         
         <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center text-center">
-          <motion.img 
+          <motion.img
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             src={heroLogoUrl}
             alt={c.brand.name}
-            className="block h-auto w-auto max-h-[min(8.5rem,24vh)] sm:max-h-32 md:max-h-40 max-w-[min(100%,18rem)] sm:max-w-[min(100%,20rem)] object-contain object-center -my-5 sm:-my-7 mb-1 sm:mb-3 drop-shadow-2xl"
+            className="order-1 block h-auto w-auto max-h-[min(7.5rem,20vh)] sm:max-h-32 md:max-h-40 max-w-[min(100%,16rem)] sm:max-w-[min(100%,20rem)] object-contain object-center -my-3 sm:-my-7 mb-2 sm:mb-3 drop-shadow-2xl"
           />
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08, duration: 0.5 }}
-            className="w-full max-w-7xl mb-5 sm:mb-6"
+          <motion.h1
+            key={`headline-${locale}`}
+            initial={reducedMotion ? false : localeSwap.initial}
+            animate={localeSwap.animate}
+            transition={{ ...localeSwap.transition, delay: 0.12 }}
+            className="order-2 text-[clamp(1.25rem,5vw+0.5rem,1.75rem)] sm:order-4 sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-snug sm:leading-tight mb-3 sm:mb-6 px-1 text-balance max-w-[20rem] sm:max-w-xl mx-auto"
           >
-            <p className="text-center text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 sm:mb-4">
-              {c.university_partners.label}
-            </p>
-            <UniversityPartnerLogos />
+            <HeroTitle headline={c.hero.headline} highlight={c.hero.headlineHighlight} />
+          </motion.h1>
+
+          <motion.p
+            key={`subheadline-${locale}`}
+            initial={reducedMotion ? false : localeSwap.initial}
+            animate={localeSwap.animate}
+            transition={{ ...localeSwap.transition, delay: 0.18 }}
+            className="order-3 text-sm leading-relaxed sm:order-5 sm:text-sm md:text-base text-slate-300 max-w-[min(100%,22rem)] sm:max-w-md md:max-w-lg mx-auto mb-4 sm:mb-8 md:mb-10 px-1 text-balance"
+          >
+            {c.hero.subheadline}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.28, duration: 0.5 }}
+            className="order-4 z-10 flex w-full max-w-md justify-center mx-auto mb-4 sm:order-7 sm:mb-0"
+          >
+            <ConsultationButton
+              variant="onDark"
+              testId="btn-hero-consultation"
+              className="w-full max-w-md min-h-[3.25rem] text-[0.9375rem] sm:min-h-12"
+            />
           </motion.div>
 
           <motion.div
@@ -242,74 +270,68 @@ export default function Home() {
             animate="visible"
             variants={staggerContainer}
             transition={{ delay: 0.12 }}
-            className="flex w-full max-w-lg flex-col items-center gap-y-3.5 text-xs leading-snug sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-6 sm:gap-y-3 sm:text-sm sm:leading-normal text-slate-400 font-medium mx-auto text-center sm:text-start mb-5 sm:mb-6"
+            className="order-5 flex w-full max-w-md flex-col items-stretch gap-2 text-sm leading-snug sm:order-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-3 sm:text-sm text-slate-300 font-medium mx-auto mb-4 sm:mb-6"
           >
-            <motion.div variants={staggerItem} className="flex items-start sm:items-center gap-2 justify-center sm:justify-start max-w-[20rem] sm:max-w-none">
-              <MapPin className="w-4 h-4 text-[#C8A84B] shrink-0 mt-0.5 sm:mt-0" /> <span>{c.hero.trust_badges[0]}</span>
+            <motion.div
+              variants={staggerItem}
+              className="flex items-center gap-2.5 justify-center rounded-full bg-white/5 px-3.5 py-2.5 sm:bg-transparent sm:px-0 sm:py-0"
+            >
+              <MapPin className="w-4 h-4 text-[#C8A84B] shrink-0" />
+              <span className="text-center sm:text-start">{c.hero.trust_badges[0]}</span>
             </motion.div>
-            <motion.div variants={staggerItem} className="flex items-center gap-2.5 justify-center sm:justify-start max-w-[20rem] sm:max-w-none">
+            <motion.div
+              variants={staggerItem}
+              className="flex items-center gap-2.5 justify-center rounded-full bg-white/5 px-3.5 py-2.5 sm:bg-transparent sm:px-0 sm:py-0"
+            >
               <img
                 src={flagsUrl}
                 alt={c.ui.flags_alt}
-                className="h-7 w-auto max-w-[min(11rem,55vw)] shrink-0 object-contain object-left sm:h-8 sm:max-w-[13rem]"
+                className="h-6 w-auto max-w-[10rem] shrink-0 object-contain sm:h-8 sm:max-w-[13rem]"
                 loading="lazy"
                 decoding="async"
               />
-              <span className="text-start [overflow-wrap:anywhere]">{c.hero.trust_badges[1]}</span>
+              <span className="text-center sm:text-start [overflow-wrap:anywhere]">{c.hero.trust_badges[1]}</span>
             </motion.div>
-            <motion.div variants={staggerItem} className="flex items-start sm:items-center gap-2 text-white justify-center sm:justify-start">
-              <ShieldCheck className="w-4 h-4 text-[#1A6B8A] shrink-0 mt-0.5 sm:mt-0" /> <span>{c.hero.trust_badges[2]}</span>
+            <motion.div
+              variants={staggerItem}
+              className="flex items-center gap-2.5 justify-center rounded-full bg-white/5 px-3.5 py-2.5 text-white sm:bg-transparent sm:px-0 sm:py-0"
+            >
+              <ShieldCheck className="w-4 h-4 text-[#1A6B8A] shrink-0" />
+              <span className="text-center sm:text-start">{c.hero.trust_badges[2]}</span>
             </motion.div>
           </motion.div>
-          
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.6 }}
-            className="text-[clamp(1.125rem,2.8vw+0.5rem,1.625rem)] sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-snug sm:leading-tight mb-4 sm:mb-6 px-1 text-balance max-w-xl mx-auto"
+            transition={{ delay: 0.08, duration: 0.5 }}
+            className="order-6 w-full max-w-7xl mb-4 sm:order-2 sm:mb-6"
           >
-            <HeroTitle headline={c.hero.headline} highlight={c.hero.headlineHighlight} />
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-xs leading-relaxed sm:text-sm md:text-base text-slate-300 max-w-[16rem] sm:max-w-md md:max-w-lg mx-auto mb-5 sm:mb-8 md:mb-10 px-1 text-balance"
-          >
-            {c.hero.subheadline}
-          </motion.p>
-          
-          <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-y-4 sm:gap-y-6 md:gap-y-8 px-0.5">
-          <motion.div 
+            <p className="text-center text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 sm:mb-4">
+              {c.university_partners.label}
+            </p>
+            <UniversityPartnerLogos />
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="w-full"
+            className="order-7 w-full max-w-3xl sm:order-6"
           >
             <VideoEmbed
               label={videoCaption(c.hero.video.label, c.hero.video.duration)}
               watchLabel={c.ui.watch}
             />
           </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="flex w-full max-w-md justify-center mx-auto"
-          >
-            <ConsultationButton variant="onDark" testId="btn-hero-consultation" className="w-full max-w-md" />
-          </motion.div>
-          </div>
 
           <HeroFlyingSchoolsStrip />
         </div>
       </section>
 
       {/* 2. THE 4-PHASE SYSTEM */}
-      <section className="py-14 sm:py-20 md:py-24 bg-white text-[#0E2340]">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 md:py-24 bg-white text-[#0E2340]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSectionHeader
             title={c.process.section_title}
             accentClass="bg-[#C8A84B]"
@@ -336,8 +358,8 @@ export default function Home() {
       </section>
 
       {/* 3. STUDENT RESULTS */}
-      <section className="py-14 sm:py-20 md:py-24 bg-[#F7F8FA] text-[#0E2340] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 md:py-24 bg-[#F7F8FA] text-[#0E2340] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSectionHeader
             title={c.testimonials.section_title}
             accentClass="bg-[#1A6B8A]"
@@ -356,7 +378,7 @@ export default function Home() {
             {c.testimonials.items.map((testimonial) => (
               <CarouselSlide
                 key={testimonial.name}
-                className="flex-[0_0_min(82vw,18.75rem)] sm:flex-[0_0_300px]"
+                className="flex-[0_0_min(88vw,18.75rem)] sm:flex-[0_0_300px]"
               >
                 <motion.div
                   whileHover={{ y: -6 }}
@@ -364,15 +386,18 @@ export default function Home() {
                   className="h-full"
                 >
                   <Card className="h-full border-none shadow-lg">
-                    <CardContent className="p-4 sm:p-6">
-                      <div className="w-full mb-4">
+                    <CardContent
+                      className="p-4 sm:p-6"
+                      dir={locale === "ar" ? "rtl" : "ltr"}
+                    >
+                      <div className="mx-auto mb-4 w-full max-w-[10.5rem] sm:max-w-none">
                         <VideoEmbed
                           label={testimonial.video.label}
                           watchLabel={c.ui.watch}
-                          aspect="aspect-[9/16]"
+                          aspect="aspect-[9/16] max-h-[min(48vh,17.5rem)] sm:max-h-none"
                         />
                       </div>
-                      <p className="text-slate-700 italic mb-4 font-medium text-sm sm:text-base leading-relaxed">
+                      <p className="text-slate-700 italic mb-4 font-medium text-[0.9375rem] sm:text-base leading-relaxed">
                         "{testimonial.quote}"
                       </p>
                       <div>
@@ -389,7 +414,7 @@ export default function Home() {
           </AutoScrollCarousel>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSectionHeader
             title={c.gallery.section_title}
             accentClass="bg-[#1A6B8A]"
@@ -408,7 +433,7 @@ export default function Home() {
             {c.gallery.images.map((image, index) => (
               <CarouselSlide
                 key={`${image.alt}-${index}`}
-                className="flex-[0_0_min(82vw,18.75rem)] sm:flex-[0_0_300px]"
+                className="flex-[0_0_min(88vw,18.75rem)] sm:flex-[0_0_300px]"
               >
                 <motion.div
                   className="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200"
@@ -416,12 +441,13 @@ export default function Home() {
                   transition={springSnappy}
                 >
                   <motion.img
-                    src={`${import.meta.env.BASE_URL}${image.src.replace(/^\//, "")}`}
+                    src={galleryPhotos[index] ?? galleryPhotos[0]}
                     alt={image.alt}
                     className="h-full w-full object-cover"
                     loading="lazy"
                     decoding="async"
                     draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
                     whileHover={{ scale: 1.06 }}
                     transition={{ duration: 0.4 }}
                   />
@@ -431,14 +457,14 @@ export default function Home() {
           </AutoScrollCarousel>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionConsultationCta variant="onLight" className="mt-10 sm:mt-12" testId="btn-testimonials-consultation" />
         </div>
       </section>
 
       {/* 4. FAQ */}
-      <section className="py-14 sm:py-20 md:py-24 bg-white text-[#0E2340]">
-        <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 md:py-24 bg-white text-[#0E2340]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSectionHeader
             title={c.faq.section_title}
             accentClass="bg-[#2B7EC1]"
@@ -447,7 +473,7 @@ export default function Home() {
         </div>
 
         <motion.div
-          className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mb-10 sm:mb-14"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewportOnce}
@@ -459,7 +485,7 @@ export default function Home() {
           <UniversityPartnerLogos />
         </motion.div>
 
-        <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -470,8 +496,8 @@ export default function Home() {
             {c.faq.items.map((faq, i) => (
               <motion.div key={faq.question} variants={staggerItem}>
               <AccordionItem value={`item-${i}`} className="border-b border-slate-200">
-                <AccordionTrigger className="text-start font-bold text-sm sm:text-lg hover:text-[#2B7EC1] py-3 sm:py-4 leading-snug text-balance touch-manipulation">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-slate-600 text-sm sm:text-base leading-relaxed pb-4">
+                <AccordionTrigger className="text-start font-bold text-[0.9375rem] sm:text-lg hover:text-[#2B7EC1] py-4 min-h-[3.25rem] sm:min-h-0 sm:py-4 leading-snug text-balance touch-manipulation [&>svg]:size-5">{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-slate-600 text-[0.9375rem] sm:text-base leading-relaxed pb-5">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -481,7 +507,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -497,7 +523,7 @@ export default function Home() {
                 whileHover={{ y: -3, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={springSnappy}
-                className="bg-slate-900 rounded-lg p-3.5 sm:p-3 min-h-[3rem] sm:min-h-0 flex items-center justify-between gap-2 text-white text-[11px] sm:text-xs font-semibold cursor-pointer touch-manipulation"
+                className="bg-slate-900 rounded-xl p-4 sm:p-3 min-h-12 sm:min-h-0 flex items-center justify-between gap-3 text-white text-sm sm:text-xs font-semibold cursor-pointer touch-manipulation active:bg-slate-800"
               >
                 <span className="leading-snug">{pillLabel}</span>
                 <PlayCircle className="w-4 h-4 text-[#C8A84B] shrink-0" />
@@ -510,7 +536,7 @@ export default function Home() {
       </section>
 
       {/* 5. FINAL CTA */}
-      <section id="book" className="py-20 sm:py-28 md:py-32 bg-[#0E2340] text-center px-3 sm:px-4 overflow-hidden">
+      <section id="book" className="py-16 sm:py-28 md:py-32 bg-[#0E2340] text-center px-4 sm:px-4 overflow-hidden scroll-mt-20">
         <motion.div
           className="max-w-3xl mx-auto"
           initial="hidden"
@@ -520,13 +546,13 @@ export default function Home() {
         >
           <motion.h2
             variants={staggerItem}
-            className="text-3xl leading-tight sm:text-4xl md:text-6xl font-black mb-4 sm:mb-6 text-balance"
+            className="text-[clamp(1.5rem,6vw,1.875rem)] leading-tight sm:text-4xl md:text-6xl font-black mb-4 sm:mb-6 text-balance px-1"
           >
             {c.final_cta.section_title}
           </motion.h2>
           <motion.p
             variants={staggerItem}
-            className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed px-1"
+            className="text-base sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed px-1 max-w-md mx-auto"
           >
             {c.final_cta.description}
           </motion.p>

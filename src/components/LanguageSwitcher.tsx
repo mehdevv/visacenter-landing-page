@@ -10,7 +10,7 @@ export function LanguageSwitcher() {
 
   return (
     <motion.div
-      className="fixed top-3 end-3 z-50 flex items-center gap-0.5 rounded-lg border border-white/15 bg-[#0E2340]/90 p-0.5 shadow-lg backdrop-blur-sm sm:top-4 sm:end-4"
+      className="fixed end-3 top-[max(0.75rem,env(safe-area-inset-top))] z-50 flex items-center gap-0.5 rounded-lg border border-white/15 bg-[#0E2340]/90 p-0.5 shadow-lg backdrop-blur-sm sm:end-4 sm:top-4"
       role="group"
       aria-label="Language"
       initial={{ opacity: 0, y: -12 }}
@@ -22,7 +22,7 @@ export function LanguageSwitcher() {
           key={code}
           type="button"
           onClick={() => setLocale(code)}
-          className={`relative min-h-9 min-w-9 rounded-md px-2.5 text-xs font-bold uppercase tracking-wide touch-manipulation ${
+          className={`relative min-h-11 min-w-11 rounded-md px-2.5 text-xs font-bold uppercase tracking-wide touch-manipulation sm:min-h-9 sm:min-w-9 ${
             locale === code ? "text-[#0E2340]" : "text-slate-300 hover:text-white"
           }`}
           aria-pressed={locale === code}
