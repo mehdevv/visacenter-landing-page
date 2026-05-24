@@ -1,5 +1,5 @@
 import type { Locale } from "@/i18n/types";
-import fourPhaseAr from "../ar.png";
+import fourPhaseAr from "../ARABIC.png";
 import fourPhaseEn from "../en.png";
 import fourPhaseFr from "../fr.png";
 

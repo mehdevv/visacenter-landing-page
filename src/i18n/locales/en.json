@@ -3,7 +3,7 @@
     "name": "VISA Centre Algeria",
     "tagline": "Official representatives",
     "location": "Hydra, Algiers",
-    "since": 2017,
+    "since": 2021,
     "guarantee": "Satisfait ou Remboursé",
     "whatsapp": "+213XXXXXXXXX",
     "consultationLink": "#book",
@@ -11,8 +11,12 @@
   },
 
   "hero": {
-    "headline": "+200 students served",
-    "headlineHighlight": "+200 students served",
+    "headline": "Get a scholarship that covers your study costs at the best Chinese universities\nBachelor's - Master's - Vocational training",
+    "headlineHighlight": "",
+    "students_served_highlight": "+200 students",
+    "students_served_rest": " served",
+    "experience_highlight": "+5",
+    "experience_rest": " years experience · Hydra, Algiers",
     "subheadline": "We guide you from application to arrival—admission, scholarships, and a clear path to your university in China.",
     "video": {
       "label": "Founder Introduction",
@@ -20,13 +24,12 @@
       "placeholder": "Founder speaking directly to camera — introduce the agency, student pain points, and China opportunity"
     },
     "trust_badges": [
-      "Since 2017 · Hydra, Algiers",
       "Official representatives",
       "Satisfait ou Remboursé"
     ],
     "stats": [
       { "value": "100+", "label": "Students Placed" },
-      { "value": "2017", "label": "Since Year" },
+      { "value": "+5", "label": "Years Experience" },
       { "value": "3", "label": "Global Offices" },
       { "value": "A to Z", "label": "Process Setup" },
       { "value": "0", "label": "Students Left Behind" }
@@ -251,22 +254,22 @@
       {
         "question": "Can I study in China without speaking Chinese?",
         "answer": "Yes. Most programs for international students are taught in English. We also help you find the right English-taught programs aligned with your goals.",
-        "video": { "label": "Life in China FAQ", "duration": "45s" }
+        "video": { "label": "Life in China FAQ", "duration": "45s", "anchor": "vsl-hero" }
       },
       {
         "question": "How much budget do I need?",
         "answer": "With our scholarship optimization, many students reduce costs significantly. We map out the full budget from tuition to living costs before you commit.",
-        "video": { "label": "Budget FAQ", "duration": "45s" }
+        "video": { "label": "Budget FAQ", "duration": "45s", "anchor": "vsl-process" }
       },
       {
         "question": "What are my scholarship chances?",
         "answer": "We analyze your profile and match you with scholarships you actually qualify for — including CSC, university-level, and bilateral scholarships Algeria-China.",
-        "video": { "label": "Scholarship FAQ", "duration": "60s" }
+        "video": { "label": "Scholarship FAQ", "duration": "60s", "anchor": "vsl-testimonials" }
       },
       {
         "question": "What if my visa gets rejected?",
         "answer": "We prepare your file to minimize rejection risk. Our visa approval rate is high because we don't submit until the file is optimized.",
-        "video": { "label": "Visa FAQ", "duration": "30s" }
+        "video": { "label": "Visa FAQ", "duration": "30s", "anchor": "vsl-process" }
       },
       {
         "question": "Are Chinese degrees recognized in Algeria?",
@@ -308,7 +311,7 @@
   "final_cta": {
     "section_title": "Book Your Free Consultation Today",
     "description": "No obligation. No pressure. Just clear answers about your future.",
-    "footer_note": "Official representatives since 2017 · Hydra, Algiers"
+    "footer_note": "Official representatives · +5 years experience · Hydra, Algiers"
   },
 
   "ui": {

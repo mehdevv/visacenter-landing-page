@@ -3,7 +3,6 @@ import {
   Play,
   ShieldCheck,
   PlayCircle,
-  MapPin,
 } from "lucide-react";
 import { AnimatedSectionHeader } from "@/components/AnimatedSectionHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -82,14 +81,17 @@ function SectionConsultationCta({
 }
 
 function HeroTitle({ headline, highlight }: { headline: string; highlight: string }) {
+  if (!highlight) {
+    return <span className="whitespace-pre-line">{headline}</span>;
+  }
   const idx = headline.indexOf(highlight);
-  if (idx === -1) return <>{headline}</>;
+  if (idx === -1) return <span className="whitespace-pre-line">{headline}</span>;
   return (
-    <>
+    <span className="whitespace-pre-line">
       {headline.slice(0, idx)}
       <span className="text-emerald-400">{highlight}</span>
       {headline.slice(idx + highlight.length)}
-    </>
+    </span>
   );
 }
 
@@ -232,52 +234,26 @@ export default function Home() {
             className="order-1 block h-auto w-auto max-h-[min(7.5rem,20vh)] sm:max-h-32 md:max-h-40 max-w-[min(100%,16rem)] sm:max-w-[min(100%,20rem)] object-contain object-center -my-3 sm:-my-7 mb-2 sm:mb-3 drop-shadow-2xl"
           />
 
-          <motion.h1
-            key={`headline-${locale}`}
-            initial={reducedMotion ? false : localeSwap.initial}
-            animate={localeSwap.animate}
-            transition={{ ...localeSwap.transition, delay: 0.12 }}
-            className="order-2 text-[clamp(1.25rem,5vw+0.5rem,1.75rem)] sm:order-4 sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-snug sm:leading-tight mb-3 sm:mb-6 px-1 text-balance max-w-[20rem] sm:max-w-xl mx-auto"
-          >
-            <HeroTitle headline={c.hero.headline} highlight={c.hero.headlineHighlight} />
-          </motion.h1>
-
-          <motion.p
-            key={`subheadline-${locale}`}
-            initial={reducedMotion ? false : localeSwap.initial}
-            animate={localeSwap.animate}
-            transition={{ ...localeSwap.transition, delay: 0.18 }}
-            className="order-3 text-sm leading-relaxed sm:order-5 sm:text-sm md:text-base text-slate-300 max-w-[min(100%,22rem)] sm:max-w-md md:max-w-lg mx-auto mb-4 sm:mb-8 md:mb-10 px-1 text-balance"
-          >
-            {c.hero.subheadline}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.28, duration: 0.5 }}
-            className="order-4 z-10 flex w-full max-w-md justify-center mx-auto mb-4 sm:order-7 sm:mb-0"
-          >
-            <ConsultationButton
-              variant="onDark"
-              testId="btn-hero-consultation"
-              className="w-full max-w-md min-h-[3.25rem] text-[0.9375rem] sm:min-h-12"
-            />
-          </motion.div>
-
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
             transition={{ delay: 0.12 }}
-            className="order-5 flex w-full max-w-md flex-col items-stretch gap-2 text-sm leading-snug sm:order-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-3 sm:text-sm text-slate-300 font-medium mx-auto mb-4 sm:mb-6"
+            className="order-2 flex w-full max-w-md flex-col items-stretch gap-2 text-sm leading-snug sm:order-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-3 sm:text-sm text-slate-300 font-medium mx-auto mb-3 sm:mb-6"
           >
             <motion.div
               variants={staggerItem}
-              className="flex items-center gap-2.5 justify-center rounded-full bg-white/5 px-3.5 py-2.5 sm:bg-transparent sm:px-0 sm:py-0"
+              className="flex items-center gap-2.5 justify-center rounded-full bg-white/5 px-3.5 py-2.5 text-white sm:bg-transparent sm:px-0 sm:py-0"
             >
-              <MapPin className="w-4 h-4 text-[#C8A84B] shrink-0" />
-              <span className="text-center sm:text-start">{c.hero.trust_badges[0]}</span>
+              <span className="text-emerald-400 font-bold shrink-0">{c.hero.students_served_highlight}</span>
+              <span className="text-center sm:text-start">{c.hero.students_served_rest}</span>
+            </motion.div>
+            <motion.div
+              variants={staggerItem}
+              className="flex items-center gap-2.5 justify-center rounded-full bg-white/5 px-3.5 py-2.5 text-white sm:bg-transparent sm:px-0 sm:py-0"
+            >
+              <span className="text-emerald-400 font-bold shrink-0">{c.hero.experience_highlight}</span>
+              <span className="text-center sm:text-start">{c.hero.experience_rest}</span>
             </motion.div>
             <motion.div
               variants={staggerItem}
@@ -290,15 +266,48 @@ export default function Home() {
                 loading="lazy"
                 decoding="async"
               />
-              <span className="text-center sm:text-start [overflow-wrap:anywhere]">{c.hero.trust_badges[1]}</span>
+              <span className="text-center sm:text-start [overflow-wrap:anywhere]">{c.hero.trust_badges[0]}</span>
             </motion.div>
             <motion.div
               variants={staggerItem}
               className="flex items-center gap-2.5 justify-center rounded-full bg-white/5 px-3.5 py-2.5 text-white sm:bg-transparent sm:px-0 sm:py-0"
             >
               <ShieldCheck className="w-4 h-4 text-[#1A6B8A] shrink-0" />
-              <span className="text-center sm:text-start">{c.hero.trust_badges[2]}</span>
+              <span className="text-center sm:text-start">{c.hero.trust_badges[1]}</span>
             </motion.div>
+          </motion.div>
+
+          <motion.h1
+            key={`headline-${locale}`}
+            initial={reducedMotion ? false : localeSwap.initial}
+            animate={localeSwap.animate}
+            transition={{ ...localeSwap.transition, delay: 0.12 }}
+            className="order-3 text-[clamp(1.125rem,4.5vw+0.5rem,1.625rem)] sm:order-4 sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-snug sm:leading-tight mb-3 sm:mb-6 px-1 text-balance max-w-[min(100%,26rem)] sm:max-w-2xl mx-auto"
+          >
+            <HeroTitle headline={c.hero.headline} highlight={c.hero.headlineHighlight} />
+          </motion.h1>
+
+          <motion.p
+            key={`subheadline-${locale}`}
+            initial={reducedMotion ? false : localeSwap.initial}
+            animate={localeSwap.animate}
+            transition={{ ...localeSwap.transition, delay: 0.18 }}
+            className="order-4 text-sm leading-relaxed sm:order-5 sm:text-sm md:text-base text-slate-300 max-w-[min(100%,22rem)] sm:max-w-md md:max-w-lg mx-auto mb-4 sm:mb-8 md:mb-10 px-1 text-balance"
+          >
+            {c.hero.subheadline}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.28, duration: 0.5 }}
+            className="order-5 z-10 flex w-full max-w-md justify-center mx-auto mb-4 sm:order-7 sm:mt-6 sm:mb-0"
+          >
+            <ConsultationButton
+              variant="onDark"
+              testId="btn-hero-consultation"
+              className="w-full max-w-md min-h-[3.25rem] text-[0.9375rem] sm:min-h-12"
+            />
           </motion.div>
 
           <motion.div
@@ -314,10 +323,11 @@ export default function Home() {
           </motion.div>
 
           <motion.div
+            id="vsl-hero"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="order-7 w-full max-w-3xl sm:order-6"
+            className="order-7 mt-5 w-full max-w-3xl scroll-mt-24 sm:order-6 sm:mt-0 sm:mb-0"
           >
             <VideoEmbed
               label={videoCaption(c.hero.video.label, c.hero.video.duration)}
@@ -342,10 +352,12 @@ export default function Home() {
             <FourPhaseDiagram />
 
             <motion.div
+              id="vsl-process"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={viewportOnce}
+              className="scroll-mt-24"
             >
               <VideoEmbed
                 label={videoCaption(c.process.video.label, c.process.video.duration)}
@@ -358,7 +370,10 @@ export default function Home() {
       </section>
 
       {/* 3. STUDENT RESULTS */}
-      <section className="py-12 sm:py-20 md:py-24 bg-[#F7F8FA] text-[#0E2340] overflow-hidden">
+      <section
+        id="vsl-testimonials"
+        className="py-12 sm:py-20 md:py-24 bg-[#F7F8FA] text-[#0E2340] overflow-hidden scroll-mt-24"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSectionHeader
             title={c.testimonials.section_title}
@@ -516,18 +531,20 @@ export default function Home() {
             {faqVideoPills.map((item) => {
               const v = item.video!;
               const pillLabel = v.duration ? `${v.label} · ${v.duration}` : v.label;
+              const href = v.anchor ? `#${v.anchor}` : "#";
               return (
-              <motion.div
+              <motion.a
                 key={item.question}
+                href={href}
                 variants={staggerItem}
                 whileHover={{ y: -3, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={springSnappy}
-                className="bg-slate-900 rounded-xl p-4 sm:p-3 min-h-12 sm:min-h-0 flex items-center justify-between gap-3 text-white text-sm sm:text-xs font-semibold cursor-pointer touch-manipulation active:bg-slate-800"
+                className="bg-slate-900 rounded-xl p-4 sm:p-3 min-h-12 sm:min-h-0 flex items-center justify-between gap-3 text-white text-sm sm:text-xs font-semibold no-underline touch-manipulation active:bg-slate-800 hover:bg-slate-800"
               >
                 <span className="leading-snug">{pillLabel}</span>
                 <PlayCircle className="w-4 h-4 text-[#C8A84B] shrink-0" />
-              </motion.div>
+              </motion.a>
               );
             })}
           </motion.div>

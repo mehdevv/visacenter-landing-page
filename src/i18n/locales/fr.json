@@ -3,15 +3,19 @@
     "name": "VISA Centre Algérie",
     "tagline": "Représentants officiels",
     "location": "Hydra, Alger",
-    "since": 2017,
+    "since": 2021,
     "guarantee": "Satisfait ou Remboursé",
     "whatsapp": "+213XXXXXXXXX",
     "consultationLink": "#book",
     "cta_consultation": "Réserver un appel de consultation"
   },
   "hero": {
-    "headline": "+200 étudiants accompagnés",
-    "headlineHighlight": "+200 étudiants accompagnés",
+    "headline": "Obtenez une bourse qui couvre vos frais d'études dans les meilleures universités chinoises\nLicence - Master - Formation professionnelle",
+    "headlineHighlight": "",
+    "students_served_highlight": "+200 étudiants",
+    "students_served_rest": " accompagnés",
+    "experience_highlight": "+5",
+    "experience_rest": " ans d'expérience · Hydra, Alger",
     "subheadline": "Nous vous guidons de la candidature à l'arrivée — admission, bourses et un parcours clair vers votre université en Chine.",
     "video": {
       "label": "Présentation du fondateur",
@@ -19,7 +23,6 @@
       "placeholder": "Le fondateur s'adresse directement à la caméra — présentation de l'agence, difficultés des étudiants et opportunité en Chine"
     },
     "trust_badges": [
-      "Depuis 2017 · Hydra, Alger",
       "Représentants officiels",
       "Satisfait ou Remboursé"
     ],
@@ -29,8 +32,8 @@
         "label": "Étudiants placés"
       },
       {
-        "value": "2017",
-        "label": "Depuis"
+        "value": "+5",
+        "label": "Ans d'expérience"
       },
       {
         "value": "3",
@@ -289,7 +292,8 @@
         "answer": "Oui. La plupart des programmes pour étudiants internationaux sont en anglais. Nous vous aidons aussi à trouver les programmes en anglais adaptés à vos objectifs.",
         "video": {
           "label": "FAQ vie en Chine",
-          "duration": "45s"
+          "duration": "45s",
+          "anchor": "vsl-hero"
         }
       },
       {
@@ -297,7 +301,8 @@
         "answer": "Avec notre optimisation des bourses, beaucoup d'étudiants réduisent fortement les coûts. Nous détaillons le budget complet — frais de scolarité et vie quotidienne — avant votre engagement.",
         "video": {
           "label": "FAQ budget",
-          "duration": "45s"
+          "duration": "45s",
+          "anchor": "vsl-process"
         }
       },
       {
@@ -305,7 +310,8 @@
         "answer": "Nous analysons votre profil et vous orientons vers les bourses réellement accessibles — CSC, bourses universitaires et programmes bilatéraux Algérie-Chine.",
         "video": {
           "label": "FAQ bourses",
-          "duration": "60s"
+          "duration": "60s",
+          "anchor": "vsl-testimonials"
         }
       },
       {
@@ -313,7 +319,8 @@
         "answer": "Nous préparons votre dossier pour limiter les refus. Notre taux d'approbation est élevé car nous ne soumettons pas tant que le dossier n'est pas optimisé.",
         "video": {
           "label": "FAQ visa",
-          "duration": "30s"
+          "duration": "30s",
+          "anchor": "vsl-process"
         }
       },
       {
@@ -353,7 +360,7 @@
   "final_cta": {
     "section_title": "Réservez votre consultation gratuite aujourd'hui",
     "description": "Sans engagement. Sans pression. Juste des réponses claires sur votre avenir.",
-    "footer_note": "Représentants officiels depuis 2017 · Hydra, Alger"
+    "footer_note": "Représentants officiels · +5 ans d'expérience · Hydra, Alger"
   },
   "ui": {
     "watch": "Regarder",

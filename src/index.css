@@ -227,6 +227,10 @@ body.locale-ar {
 }
 
 /* Edge-to-edge horizontal strips (carousels + university marquee) */
+html {
+  scroll-behavior: smooth;
+}
+
 .carousel-full-bleed {
   width: 100vw;
   max-width: 100vw;
